@@ -7,19 +7,19 @@ export const meta: MetaFunction = () => {
   ]
 }
 
-export default function Index() {
+const IndexPage = () => {
   return (
-    <main className="w-screen h-screen">
+    <section className="w-full h-full">
       <div className="flex flex-col w-full h-full justify-end p-24 cursor-default">
-        <h1 className="text-[64px] font-black">
+        <h1 className="text-[64px] font-black text-slate-300">
           Hello, I am Shazrin —
         </h1>
-        <h2 className="text-[32px] font-bold w-1/2 mb-4">
+        <h2 className="text-[32px] font-bold w-1/2 mb-4 text-slate-400">
           a software engineer specialized in fullstack web development
         </h2>
-        <ul className="flex flex-row space-x-6">
+        <ul className="flex flex-row space-x-6 text-slate-500">
           <li>
-            <a href="#">GitHub</a>
+            <a href="https://github.com/shazxrin">GitHub</a>
           </li>
           <li>
             <a href="#">LinkedIn</a>
@@ -29,6 +29,7 @@ export default function Index() {
           </li>
         </ul>
       </div>
-    </main>
+    </section>
   )
 }
+export default IndexPage

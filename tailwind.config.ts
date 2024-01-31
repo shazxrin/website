@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Satoshi", "sans-serif"],
+        sans: ["Satoshi-Variable", "sans-serif"],
       },
     },
   },
