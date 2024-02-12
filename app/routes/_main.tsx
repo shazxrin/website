@@ -1,19 +1,25 @@
-import { Link, Outlet } from "@remix-run/react"
+import { Link, Outlet, useLocation } from "@remix-run/react"
 import { useEffect, useState } from "react"
 
 type NavLinkProps = {
   to: string
   label: string
 }
-const NavLink = ({ label, to }: NavLinkProps) => {
+
+const NavLink: React.FC<NavLinkProps> = ({ label, to }: NavLinkProps) => {
+  const location = useLocation()
+
   return (
-    <Link className="hover:text-slate-200" to={to}>
+    <Link 
+      className={`transition hover:text-slate-300 ${location.pathname === to && "text-slate-200"}`} 
+      to={to}
+    >
       {label}
     </Link>
   )
 }
 
-const MainTemplate = () => {
+const MainTemplate: React.FC = () => {
   const [mouseX, setMouseX] = useState(0)
   const [mouseY, setMouseY] = useState(0)
   useEffect(() => {
