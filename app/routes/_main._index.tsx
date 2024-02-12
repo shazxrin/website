@@ -1,12 +1,4 @@
 import React from "react"
-import type { MetaFunction } from "@remix-run/node"
-
-export const meta: MetaFunction = () => {
-  return [
-    { title: "shazrin" },
-    { name: "description", content: "shazrin's website" },
-  ]
-}
 
 type ExternalLinkProps = { 
   href: string, 

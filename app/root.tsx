@@ -1,5 +1,5 @@
 import { cssBundleHref } from "@remix-run/css-bundle"
-import type { LinksFunction } from "@remix-run/node"
+import type { LinksFunction, MetaFunction } from "@remix-run/node"
 import {
   Links,
   LiveReload,
@@ -18,6 +18,13 @@ export const links: LinksFunction = () => [
   { rel: "stylesheet", href: fonts },
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ]
+
+export const meta: MetaFunction = () => {
+  return [
+    { title: "shazrin" },
+    { name: "description", content: "shazrin's website" },
+  ]
+}
 
 export default function App() {
   return (
@@ -40,7 +47,6 @@ export default function App() {
 
 export const ErrorBoundary: React.FC = () => {
   const error = useRouteError()
-
 
   return (
     <html lang="en">
