@@ -30,7 +30,7 @@ const IndexPage: React.FC = () => {
         </h2>
         <ul className="flex flex-row space-x-6 text-slate-500 font-semibold">
           <li>
-            <ExternalLink href="https://github.com/shazrin" label="GitHub" />
+            <ExternalLink href="https://github.com/shazxrin" label="GitHub" />
           </li>
           <li>
             <ExternalLink href="https://linkedin.com/in/muhammad-shazrin" label="LinkedIn" />
