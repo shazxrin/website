@@ -2,7 +2,7 @@ import React from "react"
 
 const AboutPage: React.FC = () => {
   return (
-    <section className="w-full h-full">
+    <section className="w-full h-full overflow-x-hidden">
       <div className="flex flex-col w-full px-8 pt-40 pb-12 lg:px-24 cursor-default items-center">
         <img
           src="/about.webp"
