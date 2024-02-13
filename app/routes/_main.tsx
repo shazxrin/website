@@ -33,7 +33,7 @@ const MainTemplate: React.FC = () => {
 
   return (
     <>
-      <nav className="flex flex-row justify-center absolute w-full top-16">
+      <nav className="flex flex-row justify-center absolute w-full top-16 z-10">
         <ul className="flex flex-row space-x-12 w-fit justify-center text-slate-400 font-medium px-8 py-2 bg-slate-700 rounded-full">
           <li>
             <NavLink to="/" label="Home" />
