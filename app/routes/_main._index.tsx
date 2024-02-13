@@ -38,7 +38,7 @@ const IndexPage: React.FC = () => {
               <ExternalLink href="https://linkedin.com/in/muhammad-shazrin" label="LinkedIn" />
             </li>
             <li>
-              <ExternalLink href="#" label="Resume" />
+              <ExternalLink href="/resume.pdf" label="Resume" />
             </li>
           </ul>
         </div>
