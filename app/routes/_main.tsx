@@ -1,4 +1,5 @@
 import { Link, Outlet, useLocation } from "@remix-run/react"
+import { AnimatePresence } from "framer-motion"
 import { useEffect, useState } from "react"
 
 type NavLinkProps = {
@@ -57,8 +58,10 @@ const MainTemplate: React.FC = () => {
           </div>
           <div className="h-full w-full absolute -z-20 bg-black" />
         </div>
-
-        <Outlet />
+        
+        <AnimatePresence mode="wait">
+          <Outlet />
+        </AnimatePresence>
       </main>
     </>
   )

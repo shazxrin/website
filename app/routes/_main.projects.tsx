@@ -10,6 +10,7 @@ import {
   IconLeaf
 } from "@tabler/icons-react"
 import React from "react"
+import AnimatedPage from "~/components/animation/animated-page"
 
 const getIcon = (tech: string) => {
   switch (tech) {
@@ -133,20 +134,22 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ name, description, color, tec
 
 const ProjectsPage: React.FC = () => {
   return (
-    <section className="w-full h-full overflow-x-hidden">
-      <div
-        className={`
-          max-w-screen-xl
-          mx-auto px-8 pt-40 pb-12 lg:px-24
-          grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 
-          cursor-default
-        `}
-      >
-        {projects.map((project) => (
-          <ProjectCard key={project.name} {...project} />
-        ))}
+    <AnimatedPage>
+      <div className="w-full h-full overflow-x-hidden">
+        <div
+          className={`
+            max-w-screen-xl
+            mx-auto px-8 pt-40 pb-12 lg:px-24
+            grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 
+            cursor-default
+          `}
+        >
+          {projects.map((project) => (
+            <ProjectCard key={project.name} {...project} />
+          ))}
+        </div>
       </div>
-    </section>
+    </AnimatedPage>
   )
 }
 export default ProjectsPage
