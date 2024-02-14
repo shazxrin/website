@@ -17,9 +17,9 @@ const ExternalLink: React.FC<ExternalLinkProps> = ({ href, label }: ExternalLink
 const IndexPage: React.FC = () => {
   return (
     <AnimatedPage>
-      <div className="w-full h-full">
-        <div className="flex flex-col w-full h-full justify-end px-8 py-16 lg:px-24 lg:py-24 cursor-default">
-          <img 
+      <div className="flex flex-col w-full h-full items-center">
+        <div className="flex flex-col w-full max-w-screen-2xl h-full justify-end px-8 py-16 lg:px-24 lg:py-24 cursor-default">
+          <img
             src="/me.webp"
             alt="Myself"
             className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-slate-700 object-cover mb-2"
