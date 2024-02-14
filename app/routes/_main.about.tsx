@@ -9,9 +9,9 @@ const AboutPage: React.FC = () => {
           <img
             src="/about.webp"
             alt="Younger me with computer"
-            className="w-full sm:w-1/2 xl:w-1/3 h-80 rounded-md object-cover mb-8"
+            className="w-full sm:max-w-xl h-80 rounded-md object-cover mb-8"
           />
-          <div className="w-full sm:w-1/2 xl:w-1/3 text-slate-300 flex flex-col space-y-2">
+          <div className="w-full sm:max-w-xl text-slate-300 flex flex-col space-y-2">
             <p>
               I am a final year Computer Science student at National University of Singapore with a strong passion for full-stack development. I also have a strong interest in AI and Computer Graphics.
             </p>
