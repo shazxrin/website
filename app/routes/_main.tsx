@@ -1,6 +1,5 @@
 import { Link, Outlet, useLocation } from "@remix-run/react"
 import { AnimatePresence } from "framer-motion"
-import { useEffect, useState } from "react"
 
 type NavLinkProps = {
   to: string
@@ -11,8 +10,8 @@ const NavLink: React.FC<NavLinkProps> = ({ label, to }: NavLinkProps) => {
   const location = useLocation()
 
   return (
-    <Link 
-      className={`transition hover:text-slate-300 ${location.pathname === to && "text-slate-200"}`} 
+    <Link
+      className={`transition hover:text-slate-300 ${location.pathname === to && "text-slate-200"}`}
       to={to}
     >
       {label}
@@ -21,17 +20,6 @@ const NavLink: React.FC<NavLinkProps> = ({ label, to }: NavLinkProps) => {
 }
 
 const MainTemplate: React.FC = () => {
-  const [mouseX, setMouseX] = useState(0)
-  const [mouseY, setMouseY] = useState(0)
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMouseX(e.clientX)
-      setMouseY(e.clientY)
-    }
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
-  }, [])
-
   return (
     <>
       <nav className="flex flex-row justify-center absolute w-full top-16 z-10">
@@ -50,15 +38,12 @@ const MainTemplate: React.FC = () => {
 
       <main className="h-full w-full">
         <div className="h-full w-full absolute overflow-hidden -z-10">
-          <div className="h-48 w-48 absolute bg-slate-800 rounded-full blur-2xl -z-10" style={{
-            top: mouseY - 86,
-            left: mouseX - 86,
-          }}>
-
-          </div>
-          <div className="h-full w-full absolute -z-20 bg-black" />
+          <div className="h-full w-full absolute -z-20 bg-black" style={{
+            backgroundImage: "radial-gradient(circle, rgb(40 40 40) 2px, rgba(0, 0, 0, 0) 2px)",
+            backgroundSize: "80px 80px",
+          }}/>
         </div>
-        
+
         <AnimatePresence mode="wait">
           <Outlet />
         </AnimatePresence>
