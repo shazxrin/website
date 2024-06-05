@@ -1,15 +1,12 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss"
 
 export default {
-  content: ["./app/**/*.{js,jsx,ts,tsx}"],
-  darkMode: "class",
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ["Satoshi-Variable", "sans-serif"],
-      },
+    content: ["./app/**/*.{js,jsx,ts,tsx}"],
+    theme: {
+        fontFamily: {
+            sans: ["Satoshi", "san-serif"]
+        },
+        extend: {},
     },
-  },
-  plugins: [],
+    plugins: [],
 } satisfies Config
-
