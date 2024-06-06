@@ -3,7 +3,7 @@ import {
     Meta,
     Outlet,
     Scripts,
-    ScrollRestoration,
+    ScrollRestoration, useRouteError,
 } from "@remix-run/react"
 import stylesheet from "app/styles/tailwind.css?url"
 import fontStylesheet from "app/styles/font.css?url"
@@ -36,8 +36,20 @@ const App = () => {
     return <Outlet/>
 }
 
+const ErrorBoundary = () => {
+    const error = useRouteError()
+
+    return (
+        <main className={ "flex flex-col items-center justify-center w-svw h-svh space-y-2" }>
+            <h1 className={ "text-4xl font-bold text-neutral-800" }>{ error.status }</h1>
+            <h2 className={ "text-2xl font-medium text-neutral-700"}>{ error.statusText }</h2>
+        </main>
+    )
+}
+
 export {
     links,
-    Layout
+    Layout,
+    ErrorBoundary
 }
 export default App
