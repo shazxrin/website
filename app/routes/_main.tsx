@@ -39,7 +39,7 @@ const Main = () => {
 
             <footer className={ "flex flex-row items-center mb-12 mt-4" }>
                 <p className={ "text-neutral-500 text-sm mr-auto" }>© 2024 Shazrin</p>
-                <a href={ "#" } className={ "text-neutral-500 text-sm underline underline-offset-4" }>Source</a>
+                <a href={ "https://github.com/shazxrin/website" } className={ "text-neutral-500 text-sm underline underline-offset-4" }>Source</a>
             </footer>
         </main>
     )
