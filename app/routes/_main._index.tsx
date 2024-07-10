@@ -89,38 +89,6 @@ const Index = () => {
                 I am interested in the JVM and its languages particularly <Highlight>Java</Highlight> and <Highlight>Kotlin</Highlight>.
                 I also have keen interest in cloud technologies, distributed systems, containerization and orchaestration. 
             </p>
-
-            <hr className={ "h-px my-8 bg-neutral-300 border-0" }/>
-
-            <div className={ "flex flex-row mb-4" }>
-                <h3 className={ "text-lg text-gray-700 font-semibold mr-auto" }>Recent Projects</h3>
-
-                <InternalLink name={ "View All" } link={ "/projects" }/>
-            </div>
-
-            <div className={ "grid grid-cols-1 md:grid-cols-2 gap-4" }>
-                {
-                    [...Array(4).keys()].map((item, index) => (
-                        <ProjectCard key={ index }/>
-                    ))
-                }
-            </div>
-
-            <hr className={ "h-px my-8 bg-neutral-300 border-0" }/>
-
-            <div className={ "flex flex-row mb-4" }>
-                <h3 className={ "text-lg text-gray-700 font-semibold mr-auto" }>Recent Writings</h3>
-
-                <InternalLink name={ "View All" } link={ "/blog" }/>
-            </div>
-
-            <div className={ "space-y-4" }>
-                {
-                    [...Array(4).keys()].map((item, index) => (
-                        <Writing key={ index }/>
-                    ))
-                }
-            </div>
         </section>
     )
 }

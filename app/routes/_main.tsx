@@ -18,17 +18,6 @@ const Main = () => {
         <main className={ "max-w-[720px] mx-auto px-8 md:px-0" }>
             <nav className={ "flex flex-row items-center mt-12 mb-4" }>
                 <img src={ "/logo.png" } className={ "w-10 h-10 object-cover object-center rounded-full mr-auto" }/>
-                <ul className={ "flex flex-row space-x-5" }>
-                    <li>
-                        <NavBarLink name={ "About" } link={ "/" }/>
-                    </li>
-                    <li>
-                        <NavBarLink name={ "Projects" } link={ "/projects" }/>
-                    </li>
-                    <li>
-                        <NavBarLink name={ "Blog" } link={ "/blog" }/>
-                    </li>
-                </ul>
             </nav>
 
             <hr className={ "h-px mb-8 bg-neutral-300 border-0" }/>
