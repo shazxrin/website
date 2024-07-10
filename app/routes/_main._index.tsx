@@ -85,12 +85,9 @@ const Index = () => {
 
             <p className={ "text-neutral-700 mt-6" }>
                 I enjoy building things for the web, creating interactive and unique experiences.
-                My preferred tech stack is <Highlight>Spring</Highlight> for the backend
-                and <Highlight>React</Highlight> for the frontend.
-                I am interested in JVM languages such as <Highlight>Java</Highlight> and <Highlight>Kotlin</Highlight>.
-                I also have keen interest in
-                AI/Machine Learning especially NLP and LLMs and have been experimenting with them.
-                I am also dabbling around with native <Highlight>Android</Highlight> apps.
+                My preferred tech stack is <Highlight>Spring</Highlight> and <Highlight>React</Highlight>.
+                I am interested in the JVM and its languages particularly <Highlight>Java</Highlight> and <Highlight>Kotlin</Highlight>.
+                I also have keen interest in cloud technologies, distributed systems, containerization and orchaestration. 
             </p>
 
             <hr className={ "h-px my-8 bg-neutral-300 border-0" }/>
