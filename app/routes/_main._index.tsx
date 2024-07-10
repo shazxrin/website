@@ -1,49 +1,99 @@
+import type { MetaFunction } from "@remix-run/node"
 import React from "react"
-import AnimatedPage from "~/components/animation/animated-page"
+import { Link } from "@remix-run/react"
 
-type ExternalLinkProps = { 
-  href: string, 
-  label: string 
+const meta: MetaFunction = () => {
+    return [
+        { title: "Shazrin" },
+        { name: "description", content: "Shazrin's Website" },
+    ]
 }
 
-const ExternalLink: React.FC<ExternalLinkProps> = ({ href, label }: ExternalLinkProps) => {
-  return (
-    <a className="transition hover:text-slate-300 hover:underline underline-offset-8" href={href}>
-      {label}
-    </a>
-  )
+type ExternalLinkProps = {
+    name: string
+    link: string
+}
+const ExternalLink = ({ name, link }: ExternalLinkProps) => {
+    return (
+        <a href={ link }
+           className={ "text-sm text-gray-500 hover:text-neutral-400 underline underline-offset-4 font-medium" }>
+            { name }
+        </a>
+    )
 }
 
-const IndexPage: React.FC = () => {
-  return (
-    <AnimatedPage>
-      <div className="flex flex-col w-full h-full items-center">
-        <div className="flex flex-col w-full max-w-screen-2xl h-full justify-end px-8 py-16 lg:px-24 lg:py-24 cursor-default">
-          <img
-            src="/me.webp"
-            alt="Myself"
-            className="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-slate-700 object-cover mb-2"
-          />
-          <h1 className="text-[32px] md:text-[48px] lg:text-[64px] font-black text-slate-300">
-            Hello, I am Shazrin —
-          </h1>
-          <h2 className="text-[20px] md:text-[26px] lg:text-[32px] font-bold w-full lg:w-1/2 mb-4 text-slate-400">
-            a software engineer specialized in fullstack web development
-          </h2>
-          <ul className="flex flex-row space-x-6 text-slate-500 font-semibold">
-            <li>
-              <ExternalLink href="https://github.com/shazxrin" label="GitHub" />
-            </li>
-            <li>
-              <ExternalLink href="https://linkedin.com/in/muhammad-shazrin" label="LinkedIn" />
-            </li>
-            <li>
-              <ExternalLink href="/resume.pdf" label="Resume" />
-            </li>
-          </ul>
+type InternalLinkProps = {
+    name: string
+    link: string
+}
+const InternalLink = ({ name, link }: InternalLinkProps) => {
+    return (
+        <Link to={ link }
+           className={ "text-sm text-gray-500 hover:text-neutral-400 underline underline-offset-4 font-medium" }>
+            { name }
+        </Link>
+    )
+}
+
+const Highlight = ({ children }: React.PropsWithChildren) => {
+    return (
+        <span className={ "italic" }>
+           { children }
+        </span>
+    )
+}
+
+const ProjectCard = () => {
+    return (
+        <div className={ "flex flex-col bg-neutral-300 rounded-lg w-full max-w-[480px] h-[280px] hover:scale-105 transform transition mx-auto" }>
+            <div className={"flex flex-col justify-center h-1/3 rounded-b-lg mt-auto px-4 py-2"}>
+                <h4 className={"text-sm text-neutral-800 font-medium"}>Bloom</h4>
+                <p className={"text-sm text-neutral-700"}>Personal gamified habit and time tracking web application</p>
+            </div>
         </div>
-      </div>
-    </AnimatedPage>
-  )
+    )
 }
-export default IndexPage
+
+const Writing = () => {
+    return (
+        <div className={ "flex flex-row justify-center" }>
+            <span className={ "text-md text-neutral-500 mr-auto" }>2024-06-24</span>
+            <h4 className={ "text-md text-neutral-600 font-medium" }>Diving into the JVM: Part 1</h4>
+        </div>
+    )
+}
+
+const Index = () => {
+    return (
+        <section>
+            <div>
+                <h1 className={ "text-2xl text-neutral-700 font-black" }>Hello, I am Shazrin — </h1>
+                <h2 className={ "text-xl text-neutral-600 font-bold" }>Software Engineer from Singapore.</h2>
+                <ul className={ "flex flex-row space-x-5 mt-2" }>
+                    <li>
+                        <ExternalLink name={ "GitHub" } link={ "https://www.github.com/shazxrin" }/>
+                    </li>
+                    <li>
+                        <ExternalLink name={ "LinkedIn" } link={ "https://www.linkedin.com/in/muhammad-shazrin" }/>
+                    </li>
+                    <li>
+                        <ExternalLink name={ "Resume" } link={ "/resume.pdf" }/>
+                    </li>
+                </ul>
+            </div>
+
+
+            <p className={ "text-neutral-700 mt-6" }>
+                I enjoy building things for the web, creating interactive and unique experiences.
+                My preferred tech stack is <Highlight>Spring</Highlight> and <Highlight>React</Highlight>.
+                I am interested in the JVM and its languages particularly <Highlight>Java</Highlight> and <Highlight>Kotlin</Highlight>.
+                I also have keen interest in cloud technologies, distributed systems, containerization and orchaestration. 
+            </p>
+        </section>
+    )
+}
+
+export {
+    meta
+}
+export default Index

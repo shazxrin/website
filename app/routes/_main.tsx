@@ -1,54 +1,37 @@
-import { Link, Outlet, useLocation } from "@remix-run/react"
-import { AnimatePresence } from "framer-motion"
+import { Link, Outlet } from "@remix-run/react"
+import React from "react"
 
-type NavLinkProps = {
-  to: string
-  label: string
+type NavBarLinkProps = {
+    name: string
+    link: string
+}
+const NavBarLink = ({ name, link }: NavBarLinkProps) => {
+    return (
+        <Link to={ link } className={ "text-md text-neutral-700 hover:text-neutral-500 underline underline-offset-4 font-medium" }>
+            { name }
+        </Link>
+    )
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ label, to }: NavLinkProps) => {
-  const location = useLocation()
+const Main = () => {
+    return (
+        <main className={ "max-w-[720px] mx-auto px-8 md:px-0" }>
+            <nav className={ "flex flex-row items-center mt-12 mb-4" }>
+                <img src={ "/logo.png" } className={ "w-10 h-10 object-cover object-center rounded-full mr-auto" }/>
+            </nav>
 
-  return (
-    <Link
-      className={`transition hover:text-slate-300 ${location.pathname === to && "text-slate-200"}`}
-      to={to}
-    >
-      {label}
-    </Link>
-  )
+            <hr className={ "h-px mb-8 bg-neutral-300 border-0" }/>
+
+            <Outlet/>
+
+            <hr className={ "h-px mt-8 bg-neutral-300 border-0" }/>
+
+            <footer className={ "flex flex-row items-center mb-12 mt-4" }>
+                <p className={ "text-neutral-500 text-sm mr-auto" }>© 2024 Shazrin</p>
+                <a href={ "https://github.com/shazxrin/website" } className={ "text-neutral-500 text-sm underline underline-offset-4" }>Source</a>
+            </footer>
+        </main>
+    )
 }
 
-const MainTemplate: React.FC = () => {
-  return (
-    <>
-      <nav className="flex flex-row justify-center absolute w-full top-16 z-10">
-        <ul className="flex flex-row space-x-12 w-fit justify-center text-slate-400 font-medium px-8 py-2 bg-slate-700 rounded-full">
-          <li>
-            <NavLink to="/" label="Home" />
-          </li>
-          <li>
-            <NavLink to="/projects" label="Projects" />
-          </li>
-          <li>
-            <NavLink to="/about" label="About" />
-          </li>
-        </ul>
-      </nav>
-
-      <main className="h-full w-full">
-        <div className="h-full w-full absolute overflow-hidden -z-10">
-          <div className="h-full w-full absolute -z-20 bg-black" style={{
-            backgroundImage: "radial-gradient(circle, rgb(40 40 40) 2px, rgba(0, 0, 0, 0) 2px)",
-            backgroundSize: "80px 80px",
-          }}/>
-        </div>
-
-        <AnimatePresence mode="wait">
-          <Outlet />
-        </AnimatePresence>
-      </main>
-    </>
-  )
-}
-export default MainTemplate
+export default Main
