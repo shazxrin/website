@@ -27,7 +27,7 @@ const Main = () => {
             <hr className={ "h-px mt-8 bg-neutral-300 border-0" }/>
 
             <footer className={ "flex flex-row items-center mb-12 mt-4" }>
-                <p className={ "text-neutral-500 text-sm mr-auto" }>© 2024 Shazrin</p>
+                <p className={ "text-neutral-500 text-sm mr-auto" }>© 2025 Shazrin</p>
                 <a href={ "https://github.com/shazxrin/website" } className={ "text-neutral-500 text-sm underline underline-offset-4" }>Source</a>
             </footer>
         </main>
