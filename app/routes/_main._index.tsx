@@ -74,10 +74,7 @@ const Index = () => {
                         <ExternalLink name={ "GitHub" } link={ "https://www.github.com/shazxrin" }/>
                     </li>
                     <li>
-                        <ExternalLink name={ "LinkedIn" } link={ "https://www.linkedin.com/in/muhammad-shazrin" }/>
-                    </li>
-                    <li>
-                        <ExternalLink name={ "Resume" } link={ "/resume.pdf" }/>
+                        <ExternalLink name={ "LinkedIn" } link={ "https://www.linkedin.com/in/muhammad-shazrin-bin-shoffie" }/>
                     </li>
                 </ul>
             </div>
